@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 // Imported Destination Images ===========>
 import paris from "../../assets/paris.jpg";
@@ -18,7 +18,7 @@ import traveler4 from "../../assets/user(4).jpg";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-const travelers = [
+const dummyTravelers = [
   {
     id: 1,
     destinationImage: paris,
@@ -50,6 +50,7 @@ const travelers = [
 ];
 
 const Travelers = () => {
+  const [travelers, setTraveler] = useState(dummyTravelers);
   // UseEffect to set animation duration ====>
   useEffect(() => {
     Aos.init({ duration: 2000 });
